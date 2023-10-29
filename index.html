@@ -208,15 +208,23 @@
             overflow: hidden;
         }
 
+        .content .imagehover {
+            width: 100%;
+            overflow: hidden;
+        }
+
         .content img {
             width: 100%;
             height: 250px;
             vertical-align: middle;
             opacity: 1;
+            transition: 0.7s ease;
         }
 
         .content img:hover {
-            opacity: 0.7;
+            transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
         }
 
         .extracontent {
@@ -695,7 +703,9 @@
             <div class="columns">
                 <div class="col-one">
                     <div class="content">
-                        <img src="images/jackdaw-8249384.jpg">
+                        <div class="imagehover">
+                            <img src="images/jackdaw-8249384.jpg">
+                        </div>
                         <div class="extracontent">
                             <h3>Bird</h3>
                             <P>Birds are a group of warm-blooded vertebrates constituting the class Aves, 
@@ -705,7 +715,10 @@
                         </div>
                     </div>
                     <div class="content">
-                        <img src="images/sunset-8331285.jpg">
+                        <div class="imagehover">
+                            <img src="images/sunset-8331285.jpg">
+                        </div>
+                        
                         <div class="extracontent">
                             <h3>Sunset</h3>
                             <p>Sunset is the disappearance of the Sun below
@@ -715,7 +728,9 @@
                         </div>
                     </div>
                     <div class="content">
-                        <img src="images/tree-736877_1920.jpg">
+                        <div class="imagehover">
+                            <img src="images/tree-736877_1920.jpg">
+                        </div>
                         <div class="extracontent">
                             <h3>Tree</h3>
                             <p>Animals that are active at night are called nocturnal. There are lots of
@@ -726,7 +741,9 @@
                 </div>
                 <div class="col-two">
                     <div class="content">
-                        <img src="images/sunset-6681770.jpg">
+                        <div class="imagehover">
+                            <img src="images/sunset-6681770.jpg">
+                        </div>
                         <div class="extracontent">
                             <h3>Horizon</h3>
                             <p>Horizon Blue Cross Blue Shield of New Jersey,
@@ -738,7 +755,9 @@
                         </div>
                     </div>
                     <div class="content">
-                        <img src="images/journey-1130732.jpg">
+                        <div class="imagehover">
+                            <img src="images/journey-1130732.jpg">
+                        </div>
                         <div class="extracontent">
                             <h3>Journey</h3>
                             <p>The meaning of TRAVEL is to 
@@ -747,7 +766,9 @@
                         </div>
                     </div>
                     <div class="content">
-                        <img src="images/sweet-wooden-home-2669177.jpg">
+                        <div class="imagehover">
+                            <img src="images/sweet-wooden-home-2669177.jpg">
+                        </div>
                         <div class="extracontent">
                             <h3>Home</h3>
                             <p>A home, or domicile, is a space used as a permanent or semi-permanent residence for one or more human occupants, and sometimes various companion animals.
@@ -757,7 +778,9 @@
                 </div>
                 <div class="col-three">
                     <div class="content">
-                        <img src="images/panoramic-3241421.jpg">
+                        <div class="imagehover">
+                            <img src="images/panoramic-3241421.jpg">
+                        </div>
                         <div class="extracontent">
                             <h3>Al-Aqsa</h3>
                             <p>
@@ -770,14 +793,18 @@
                         </div>
                     </div>
                     <div class="content">
-                        <img src="images/srinagar-3609032.jpg">
+                        <div class="imagehover">
+                            <img src="images/srinagar-3609032.jpg">
+                        </div>
                         <div class="extracontent">
                             <h3>Srinagar</h3>
                             <p>Kashmir is a region administered by India as a union territory and consists of the southern portion of the larger Kashmir region, which has been the subject of a dispute between India and Pakistan since 1947 and between India and China since 1959.</p>
                         </div>
                     </div>
                     <div class="content">
-                        <img src="images/architecture-1868667.jpg">
+                        <div class="imagehover">
+                            <img src="images/architecture-1868667.jpg">
+                        </div>
                         <div class="extracontent">
                             <h3>Architecture</h3>
                             <p>It can be defined as a permanent and densely settled place with
@@ -945,7 +972,7 @@
                         <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
                         <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span>
                         <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
-                      </p>
+                    </p>
                 </div>
             </div>
             <div class="credit">
