@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="icon/x-image" href="images/S-removebg-preview.png">
+    <script src="https://kit.fontawesome.com/5295537e26.js" crossorigin="anonymous"></script>
+    <title>Nature Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            max-width: 1600px;
+            overflow: hidden;
+        }
+
+        /* First division */
+
+        .first {
+            position: fixed;
+            left: 0px;
+            width: 20%;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            line-height: 3em;
+            z-index: 3;
+            transition: all 0.6s ease;
+        }
+
+        .first img {
+            border-radius: 6px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .first h3 {
+            letter-spacing: 2px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding-left: 20px;
+        }
+
+        .first p {
+            color: gray;
+            padding-left: 20px;
+        }
+
+        .first .icons {
+            display: block;
+        }
+
+        .first .icons i {
+            padding-right: 20px;
+            color: black;
+        }
+
+        .first .icons p {
+            color: black;
+            display: block;
+            padding-left: 20px;
+        }
+
+        .first .active {
+            color: green !important;
+        }
+
+        .first .icons :first-child:hover {
+            background-color: rgb(198, 198, 198);
+            color: black !important;
+        }
+
+        .first .icons p:hover {
+            background-color: rgb(198, 198, 198);
+        }
+
+        .extra-icons {
+            padding-left: 16px;
+            padding-top: 10px;
+        }
+
+        .extra-icons i {
+            margin: 0 3px;
+            font-size: 20px;
+            color: black;
+        }
+
+        .extra-icons i:hover {
+            color: blue;
+        }
+        .second {
+            margin-left: 20%;
+            width: 80%;
+            background-color: rgb(227, 224, 224);
+            padding: 20px 20px 0px 20px;
+        }
+
+        .second h1 {
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 40px;
+        }
+
+        .second .bar {
+            display: flex;
+        }
+
+        .second .active2 {
+            margin-top: 7px;
+            margin-right: 20px;
+        }
+
+        .second .one:hover {
+            background-color: rgb(234, 234, 234) !important;
+            color: black !important;
+        }
+
+        .second .bar ul {
+            list-style-type: none;
+        }
+
+        .second .bar ul li {
+            display: inline-block;
+        }
+
+        .second .bar ul li {
+            padding: 10px 15px;
+            background-color: white;
+        }
+
+        .second .bar .one {
+            background-color: black;
+            color: white;
+        }
+
+        .second .bar ul li:hover:not(.active2) {
+            background-color: rgb(165, 163, 163);
+            color: black;
+        }
+
+        .second .nothing {
+            width: 100%;
+            height: 5px;
+            background-color: rgb(185, 185, 185);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .second .columns {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .columns .col-one, .col-two {
+            padding-right: 10px;
+        }
+
+        .columns .col-one, .col-two, .col-three {
+            max-width: 33.33%;
+            flex: 33.33%;
+        }
+
+        @media screen and (max-width: 750px) {
+            .columns .col-one, .col-two {
+                max-width: 50%;
+                flex: 50%;
+            }
+
+            .columns .col-three {
+                flex-direction: 100%;
+                max-width: 80%;
+                margin: 0 auto;
+            }
+
+            .columns .col-two {
+                padding-right: 0px !important;
+            }
+
+            .columns .col-three {
+            padding-right: 0px !important;
+            }
+        }
+
+        @media screen and (max-width: 530px) {
+            
+            .columns .col-one, .col-two, .col-three {
+                flex: 100%;
+                max-width: 100%;
+            }
+
+            .columns .col-one {
+            padding-right: 0px !important;
+            }
+
+            .columns .col-three {
+                flex-direction: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .second .columns .content {
+            width: 100%;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .content .imagehover {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .content img {
+            width: 100%;
+            height: 250px;
+            vertical-align: middle;
+            opacity: 1;
+            transition: 0.7s ease;
+        }
+
+        .content img:hover {
+            transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+
+        .extracontent {
+            background-color: white;
+            padding: 15px;
+            height: 160px;
+            overflow: auto;
+        }
+
+        .extracontent h3 {
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 1.7px;
+            margin-bottom: 10px;
+        }
+
+        .extracontent p {
+            color: rgb(133, 132, 132);
+            font-size: 16px;
+            white-space: wrap;
+            overflow: auto;
+        }
+
+        .bar2 {
+            width: 100%;
+            height: 60px;
+            margin-bottom: 30px;
+        }
+
+        .minibar {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .minibar a {
+            float: left;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        .minibar .active {
+            color: white !important;
+            background-color: black !important;
+        }
+
+        .minibar a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .second .image2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .second .image2 img {
+            width: 600px;
+            height:500px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .second .image2 {
+                flex-direction: column;
+            }
+            .second .image2 img {
+                display: block;
+                margin: 0 auto;
+                border-radius: 6px;
+                margin: 10px;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            .second .image2 img {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        .about {
+            margin-bottom: 40px;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .about p {
+            font-size: 16px;
+            color: rgb(47, 46, 46);
+            letter-spacing: .9px;
+            line-height: 1.6em;
+        }
+
+        .skills {
+            margin-bottom: 40px;
+        }
+
+        .skills .skill {
+            margin-bottom: 20px;
+        }
+
+        .skills h2 {
+            margin-bottom: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .skills .skill p {
+            margin-bottom: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 300;
+        }
+
+        .skills .one, .two , .three{
+            width: 100%;
+            height: 44px;
+            text-align: center;
+            border: 1px solid rgb(38, 0, 255);
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } 
+
+        .skills .one {
+            background-image: linear-gradient(to right,rgb(2, 153, 223) 90%, rgb(255, 255, 255) 10%);
+        }
+
+        .skills .two {
+            background-image: linear-gradient(to right, rgb(2, 153, 223) 40%, white 40%);
+        }
+        .skills .three {
+            background-image: linear-gradient(to right, rgb(2, 153, 223) 20%, white 20%);
+        }
+
+        .resume {
+            margin-bottom: 50px;
+        }
+
+        .resume button {
+            border: 1px solid rgb(153, 150, 150);
+            background-color: rgb(136, 136, 136);
+            color: rgb(0, 0, 0);
+            padding: 17px 20px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .resume button i {
+            margin-right: 8px;
+        }
+
+        .resume button:hover {
+            background-color: rgb(176, 175, 175);
+            color: rgb(0, 0, 0);
+        }
+
+        .charge {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .charge .same {
+            width: 33%;
+            height: 100%;
+            border: 1px solid rgb(126, 126, 126);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.7;
+        }
+
+        .charge .same .child {
+            background-color: white;
+            border: 1px solid rgb(203, 203, 203);
+            width: 100%;
+            height: auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .charge .same .active {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 30px 0px;
+            font-size: 18px;
+        }
+
+        .charge .same .extra {
+            width: 100px;
+            color: rgb(255, 1, 52);
+            padding: 20px 0px;
+            font-size: 20px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .charge .same button {
+            border: none;
+            background-color: green;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .charge .same:hover {
+            opacity: 1;
+        }
+
+        .charge .same button:hover{
+            background-color: rgb(10, 184, 10);
+        }
+
+        .contacts {
+            margin-bottom: 20px;
+            background-color: rgb(204, 204, 204);
+            width: 100%;
+            padding: 20px;
+        }
+
+        .contacts h2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-bottom: 25px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        .email, .location, .number {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+            width: 33.33%;
+        }
+
+        .email {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+
+        .email i {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+
+        .location {
+            background-color: hotpink;
+            padding: 20px;
+            color: rgb(0, 0, 0);
+        }
+
+        .location i {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+
+        .number {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+
+        .number i {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+
+        .nothing2 {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .form form input {
+            width: 100%;
+            height: 50px;
+            margin: 6px 0px 8px 0px;
+            padding: 10px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form form label {
+            font-weight: 300;
+        }
+
+        .form form button {
+            border: none;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form form button i {
+            margin-right: 10px;
+        }
+
+        .form form button:hover {
+            background-color: rgb(10, 184, 10);
+        }
+
+        .credit {
+            font-size: 17px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 100%;
+            padding: 25px;
+            z-index: 1;
+        }
+
+        .footer {
+            width: 100%;
+            height: 250px;
+            background-color: rgb(143, 143, 143);
+            padding: 15px;
+            overflow: auto;
+        }
+
+        .footer h3 {
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:20px;
+            margin-bottom: 16px;
+        }
+
+        .footerinfo  {
+            display:flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            overflow: auto;
+        }
+
+        .footer .footerinfo p span {
+            font-size: 17px;
+            background-color: rgb(49, 48, 48);
+            padding: 10px 12px;
+            border-radius: 5px;
+            color: white;
+            margin: 10px 6px 5px 0px;
+            display: inline-block;
+        }
+
+        .openbtn {
+            position: absolute;
+            top: 15px;
+            left: 21px;
+            font-size: 33px;
+            background-color: transparent;
+            border: none;
+            display: none;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 36px;
+            background-color: transparent;
+            border: none;
+            display: none;
+        }
+
+        .second .laterimg {
+            position: absolute;
+            top: 12px;
+            right: 20px;
+            display: none;
+        }
+
+        @media screen and (max-width: 900px) {
+            .first {
+                left: -400px;
+                width: 270px;
+            }
+
+            .second .laterimg {
+                display: block;
+            }
+
+            /* toggle button */
+
+            .first img {
+                margin-top: 70px;
+            }
+
+            .second h1 {
+                padding-top: 50px !important;
+            }
+
+            .openbtn {
+                display: block;
+            }
+
+            .closebtn {
+                display: block;
+            }
+            /* toggle button works ends */
+            .second {
+                width: 100%;
+                margin-left: 0%;
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            .contacts .info {
+                display: block;
+            }
+
+            .contacts .info .email, .location, .number {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first" id="first">
+            <img src="images/Shihab.jpg" alt="logo" title="profile picture" width="120px" height="120px">
+            <h3>PORTFOLIO</h3>
+            <p>Created by Developer Shihab</p>
+                <div class="icons">
+                    <p class="active"><i class="fa-solid fa-border-all active"></i>PORTFOLIO</p>
+                    <p><i class="fa-solid fa-user"></i>ABOUT</p>
+                    <p><i class="fa-solid fa-envelope"></i>CONTACT</p>
+                </div>
+
+            <div class="extra-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+        <button type="button" class="closebtn" onclick="closefirst()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="second">
+            <h1>My Portfolio</h1>
+            <div class="bar">
+                <p class="active2">Filter:</p>
+                <ul>
+                    <li class="one">
+                        ALL
+                    </li>
+                    <li><p><i class="fa-regular fa-gem"></i>Design</p></li>
+                    <li><p><i class="fa-regular fa-image"></i>Photos</p></li>
+                    <li><p><i class="fa-solid fa-paintbrush"></i>Art</p></li>
+                </ul>
+            </div>
+
+            <div class="nothing"></div>
+            <div class="columns">
+                <div class="col-one">
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/lamps-4196132.jpg">
+                        </div>
+                        <div class="extracontent">
+                            <h3>Lamps</h3>
+                            <P>Night lamps, with their soft and gentle glow, provide a comforting ambiance in the darkness, serving as beacons of light and often symbolizing hope and security during the quiet hours, offering solace and guidance in the stillness of the night.</P>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/insect-8266115.jpg">
+                        </div>
+                        
+                        <div class="extracontent">
+                            <h3>Insect</h3>
+                            <p>Insects, despite their small size, play a significant role in various ecosystems, contributing to processes such as pollination, decomposition, and nutrient cycling, showcasing an incredible diversity of forms and behaviors that highlight the intricate web of life on Earth.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/cat-8257177.jpg">
+                        </div>
+                        <div class="extracontent">
+                            <h3>Cat</h3>
+                            <p>Cats, known for their independent and inquisitive nature, often form deep bonds with their human companions, providing affection, companionship, and sometimes even serving as effective pest controllers, showcasing a unique blend of grace and playful curiosity that has endeared them to people worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-two">
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/istanbul-860374.jpg">
+                        </div>
+                        <div class="extracontent">
+                            <h3>Hagia Sofia,Istanbul</h3>
+                            <p>Hagia Sophia, a renowned architectural marvel in Istanbul, Turkey, is a symbol of the region's rich history, blending Byzantine and Ottoman influences and serving as a testament to the intersection of different cultures and religions over the centuries, now functioning as a museum that attracts visitors from all around the world.</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/drone-8188144.jpg">
+                        </div>
+                        <div class="extracontent">
+                            <h3>Drone</h3>
+                            <p>Drones, with their versatile capabilities and applications, have revolutionized various industries, from aerial photography and surveillance to package delivery and agricultural monitoring, showcasing the potential for advanced technological innovation in enhancing efficiency and convenience across different sectors.</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/europe-1803495.jpg">
+                        </div>
+                        <div class="extracontent">
+                            <h3>Istanbul</h3>
+                            <p>Istanbul, a vibrant metropolis straddling Europe and Asia, boasts a rich cultural heritage, blending a myriad of influences from its historic past with a bustling modern energy, characterized by its iconic landmarks, bustling bazaars, and a diverse culinary scene, making it a captivating destination that bridges the gap between continents and cultures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-three">
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/water-lily-8253542.jpg">
+                        </div>
+                        <div class="extracontent">
+                            <h3>Water lily</h3>
+                            <p>
+                                Water lilies, with their serene beauty and tranquil presence, symbolize purity and enlightenment in various cultures, thriving in aquatic environments and serving as a source of inspiration for artists and poets throughout history, reflecting the harmony and grace that can be found in nature's most delicate creations.</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/eagle-owl-8274405.jpg">
+                        </div>
+                        <div class="extracontent">
+                            <h3>Eagle owl</h3>
+                            <p>Eagle owls, with their formidable size and striking appearance, are skilled nocturnal hunters known for their powerful talons and acute vision, representing an apex predator in many ecosystems and showcasing the remarkable adaptability and survival strategies of these majestic birds of prey.</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="imagehover">
+                            <img src="images/kingfisher-8256375.jpg">
+                        </div>
+                        <div class="extracontent">
+                            <h3>kingfisher</h3>
+                            <p>Kingfishers, with their vibrant plumage and remarkable diving abilities, are iconic birds known for their swift and precise hunting techniques, often found near water bodies, serving as indicators of the health of aquatic ecosystems and embodying the grace and agility of nature's skilled hunters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar2">
+                <div class="minibar">
+                    <a href="#" target="_self">&lt;&lt;</a>
+                    <a href="index.html" target="_self">1</a>
+                    <a href="page2.html" class="active" target="_self">2</a>
+                    <a href="page3.html" target="_self">3</a>
+                    <a href="#" target="_self">4</a>
+                    <a href="#" target="_self">>></a>
+                </div>
+            </div>
+
+            <div class="image2">
+                <img src="images/Shihab.jpg">
+                <img src="images/IMG_20230218_152653.jpg" style="margin-left: 15px;">
+            </div>
+
+            <div class="about">
+                <h2>About me</h2>
+                <p>Hello there! I'm Hanjala Muhammad Shihab,
+                     a passionate and creative Full Stack Web
+                      Developer. With one year of experience 
+                      crafting captivating digital experiences, 
+                      I'm dedicated to bringing designs to life 
+                      through clean, user-friendly code. My journey 
+                      into the world of web development began one year
+                       ago, and I've since had the pleasure of working
+                        on engaging projects. From optimizing website
+                         performance to implementing responsive designs,
+                          I've honed my skills in transforming visions
+                           into interactive reality. Notable projects
+                            include my portfolio. When I'm not immersed 
+                            in code, I enjoy travelling and reading 
+                            historical books. I also try to discover new 
+                            things eihter with coding or travelling.
+                            Thank you for getting to know me a bit better.
+                             I'm eager to connect with fellow developers,
+                     designers, and anyone passionate about
+                      crafting exceptional web experiences. Feel free to contact with me.</p>
+            </div>
+
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="skill">
+                    <p>Photography:</p>
+                    <div class="one">90%</div>
+                </div>
+                <div class="skill">
+                    <p>Graphic Design:</p>
+                    <div class="two">40%</div>
+                </div>
+                <div class="skill">
+                    <p>Web Design:</p>
+                    <div class="three">20%</div>
+                </div>
+            </div>
+
+            <div class="resume">
+                <button type="button"><i class="fa-solid fa-download"></i>Download Resume</button>
+            </div>
+
+            <div class="charge">
+                <div class="same firstly" style="margin-right: 10px;">
+                    <div class="child active">Basic</div>
+                    <div class="child">Web Design</div>
+                    <div class="child">Photography</div>
+                    <div class="child">1GB Storage</div>
+                    <div class="child">Mail Support</div>
+                    <div class="child">
+                        <div class="extra">
+                            $ 300 per month
+                        </div>
+                    </div>
+                    <div class="child last">
+                        <button type="button">Sign Up</button>
+                    </div>
+                </div>
+                <div class="same secondly" style="margin-right: 10px;">
+                    <div class="child active" style="background-color: aqua; color: black;">Pro</div>
+                    <div class="child">Web Design</div>
+                    <div class="child">Photography</div>
+                    <div class="child">50GB Storage</div>
+                    <div class="child">Endless Support</div>
+                    <div class="child">
+                        <div class="extra">
+                            $ 500 per month
+                        </div>
+                    </div>
+                    <div class="child">
+                        <button type="button">Sign Up</button>
+                    </div>
+                </div>
+                <div class="same thirdly">
+                    <div class="child active" style="background-color: red;">Premium</div>
+                    <div class="child">Web Design</div>
+                    <div class="child">Photography</div>
+                    <div class="child">Unlimited Storage</div>
+                    <div class="child">Endless Support</div>
+                    <div class="child">
+                        <div class="extra">
+                            $ 800 per month
+                        </div>
+                    </div>
+                    <div class="child last">
+                        <button type="button">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacts">
+                <h2>Contact Me</h2>
+                <div class="info">
+                    <div class="email">
+                        <i class="fa-regular fa-envelope"></i>
+                        hanjalashihab1@gmail.com
+                    </div>
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        423,Shabuj Chaya,Cumilla,Bangladesh
+                    </div>
+                    <div class="number">
+                        <i class="fa-solid fa-phone"></i>
+                        +8801306249460
+                    </div>
+                </div>
+                <div class="nothing2"></div>
+
+            <div class="form">
+                <form action="" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email">
+                    <label for="message">Message:</label>
+                    <input type="text" id="message">
+                    <button type="submit"><i class="fa-brands fa-telegram"></i>Send Message</button>
+                </form>
+            </div>
+            </div>
+            <div class="footer">
+                <h3>Places that I have visited</h3>
+                <div class="footerinfo">
+                    <p>
+                        <span class="w3-tag w3-black w3-margin-bottom">Travel</span>
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">New York</span> 
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">London</span>
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span>
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">NORWAY</span> 
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span> 
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span> 
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Family</span>
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span> 
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Clothing</span>
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span>
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
+                    </p>
+                </div>
+            </div>
+            <div class="credit">
+                <p>&copy; by Developer Hanjala Shihab</p>
+            </div>
+            <button type="button" class="openbtn" onclick="openfirst()"><i class="fa-solid fa-bars"></i></button>
+
+            <div class="laterimg">
+                <img src="images/Shihab.jpg" alt="profile picture" width="80px" height="80px" style="border-radius: 50%;">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openfirst() {
+            document.getElementById("first").style.left = "0px";
+        }
+
+        function closefirst() {
+            document.getElementById("first").style.left = "-400px";
+        }
+    </script>
+
+</body>
+</html>
