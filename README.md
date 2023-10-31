@@ -1,6 +1,6 @@
 # Nature-Portfolio
 
-This is a Portfolio design for a Traveler.Like the whole experience and informations about a traveler and his works.
+This is a responsive Portfolio design for a Traveler.Like the whole experience and informations about a traveler and his works.
 
 I created this using CSS, HTML and a little bit of JavaScript.This is just a template.
 
